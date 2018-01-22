@@ -13,12 +13,15 @@
     </h:head>
     
     <h:body>
+    <h1><strong> #{userControler.user.username} </strong></h1>
+    <h:form>
     	<fieldset>
 			<legend> ? What to do ? </legend>
-			<h:commandButton value = "LIST" action = "Index" />
-			<h:commandButton value = "EDIT" action = "Index" />
-			<h:commandButton value = "DELETE" action = "Index" />
+			<h:commandButton value = "LIST" action = "#{userControler.list(userControler.user.username)}" />
+			<h:commandButton value = "EDIT" action = "#{userControler.edit(userControler.user.username)}" />
+			<h:commandButton value = "DELETE" action = "#{userControler.delete(userControler.user.username)}" />
 		</fieldset>
+	</h:form>
     </h:body>  
         
 </html>

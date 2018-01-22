@@ -17,7 +17,7 @@ public class UserValidator implements Validator {
 		
 		stringValue = (String) value;
 		
-		// 4 Inputs to Check
+		// 3 Inputs to Check
 		switch(uiC.getId()) {
 		case "username":
 			if(stringValue.length() < 2) {
@@ -33,13 +33,7 @@ public class UserValidator implements Validator {
 		default:
 			
 		break;
-		}
-
-		
-//		if (valueIsInvalid) {
-//            
-        
+		}                 
 	}
-
 }
  

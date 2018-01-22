@@ -3,7 +3,7 @@ package UserRegistration;
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+//import javax.faces.bean.RequestScoped;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @ManagedBean
-@RequestScoped
+//@RequestScoped
 @Entity
 @Table
 public class User implements Serializable {
@@ -32,13 +32,22 @@ public class User implements Serializable {
 	public User() {
 		// Empty constructor for testing purpose
 	}
-
+	
+	// ----- ToString ---------------------------
+	
+	@Override
+	public String toString() {
+		return "User [username=" + username + ", email=" + email + ", password=" + password + "]";
+	}
+	
 	// ----- Getters and Setters ----------------
 	
 	public String getUsername() {
 		return username;
 	}
 	
+
+
 	public void setUsername(String userName) {
 		this.username = userName;
 	}

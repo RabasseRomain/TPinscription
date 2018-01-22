@@ -19,7 +19,7 @@
 			<legend> Sign-In </legend>
 			
 				<h:outputLabel value = "Username" /><br />
-				<h:inputText id = "username" value = "#{userControler.user.username}" required = "true" requiredMessage = "Must submit a value!" >
+				<h:inputText id = "username" value = "#{userControler.user.username}" binding ="#{userName}" required = "true" requiredMessage = "Must submit a value!" >
 					<f:validator validatorId="userValidator" />
 				</h:inputText>
 				<h:message for = "username" /><br />
@@ -37,7 +37,7 @@
 				<h:message for = "password" /><br />
 				
 			</fieldset> <br />
-			<h:commandButton value = "Submit" action = "#{userControler.show()}" />
+			<h:commandButton value = "Submit" action = "#{userControler.add()}" />
 
 		</h:form>
 	</h:body>

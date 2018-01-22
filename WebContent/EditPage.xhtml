@@ -9,29 +9,29 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">   
 		
 	<h:head>
-		<title>SignIn</title>
+		<title>Edit</title>
 	</h:head>
 	
 	<h:body>
-		<h1>Please Sign-In to continue.</h1>
+		<h1>Please enter your new information #{userControler.user.username}.</h1>
 		<h:form>
 			<fieldset>
-			<legend> Sign-In </legend>
+			<legend> New Infos </legend>
 			
 				<h:outputLabel value = "Username" /><br />
-				<h:inputText id = "username" value = "#{userControler.user.username}" required = "true" requiredMessage = "Must submit a value!" >
+				<h:inputText id = "username" value = "#{userControler.user.username}" >
 					<f:validator validatorId="userValidator" />
 				</h:inputText>
 				<h:message for = "username" /><br />
 				
 				<h:outputLabel value = "E-Mail" /><br />
-				<h:inputText id = "email" value = "#{userControler.user.email}" requiered = "true" requiredMessage = "Must submit a value!" >
+				<h:inputText id = "email" value = "#{userControler.user.email}" >
 					<f:validator validatorId="userValidator" />
 				</h:inputText>
 				<h:message for = "email" /><br />
 				
 				<h:outputLabel value = "Password" /><br />
-				<h:inputSecret id = "password" value = "#{userControler.user.password}" requiered = "true" requiredMessage = "Must submit a value!" >
+				<h:inputSecret id = "password" value = "#{userControler.user.password}" >
 					<f:validator validatorId="userValidator" />
 				</h:inputSecret>
 				<h:message for = "password" /><br />

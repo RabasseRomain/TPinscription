@@ -17,9 +17,9 @@
 		<h:form>
 			<fieldset>
 			<legend> Log-In </legend>
-			<!-- 
+			
 				<h:outputLabel value = "Username" /><br />
-				<h:inputText id = "username" value = "#{userControler.user.username}" required = "true" requiredMessage = "Must submit a value!" >
+				<h:inputText id = "username" value = "#{userControler.user.username}" binding ="#{userName}" required = "true" requiredMessage = "Must submit a value!" >
 					<f:validator validatorId="userValidator" />
 				</h:inputText>
 				<h:message for = "username" /><br />
@@ -35,9 +35,9 @@
 					<f:validator validatorId="userValidator" />
 				</h:inputSecret>
 				<h:message for = "password" /><br />
-			-->	
+				
 			</fieldset> <br />
-			<h:commandButton value = "Log-In" action = "HomePage" />
+			<h:commandButton value = "Log-In" action = "#{userControler.logIn()}" />
 			 
 		</h:form>
 	</h:body>

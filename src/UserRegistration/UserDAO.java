@@ -15,5 +15,12 @@ public class UserDAO{
         System.out.println("em: " + em);
         em.persist(user);
     }
+    
+    public void delete(User user) {
+        System.out.println("em: " + em);
+        em.remove(user);
+    }
+    
+    
 
 }

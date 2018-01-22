@@ -26,14 +26,13 @@ public class UserControler implements Serializable {
     }
 
     public String show() {
+    	// Show we got the data
         System.out.println("user in form ");
         System.out.println(user.getEmail());
         System.out.println(user.getPassword());
-
-        // enregistrer le user en bdd
-        // afficher à l'utilisateur qu'on a bien pris
-        // en compte son inscription
-
+        // Put User in DB
+        add();
+        // Go to Welcome Page
         return "HomePage";
     }
     

@@ -9,15 +9,19 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">  
       
     <h:head>
-    	<title>Home Page</title>
+    	<title>Start Page</title>
     </h:head>
     
     <h:body>
+    	<h1>Welcome</h1>
+    	<p>Is it your first time here?</p>
     	<fieldset>
-			<legend> ? What to do ? </legend>
-			<h:commandButton value = "LIST" action = "Index" />
-			<h:commandButton value = "EDIT" action = "Index" />
-			<h:commandButton value = "DELETE" action = "Index" />
+			<legend> I want to begin already </legend>
+			<h:commandButton value = "Let's Go!" action = "SignIn" />
+		</fieldset>
+		<fieldset>
+			<legend> I know the way </legend>
+			<h:commandButton value = "Move out!" action = "LogIn" />
 		</fieldset>
     </h:body>  
         

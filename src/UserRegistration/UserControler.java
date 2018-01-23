@@ -25,9 +25,10 @@ public class UserControler implements Serializable {
 	
 	// ----- CRUD Functions ---------------------
 	
-    public void add() {
+    public String add() {
     	System.out.println("Adding user " + user.getUsername());
         userDao.add(user);
+        return "HomePage";
     }
     
     public List<User> list() {
@@ -35,8 +36,9 @@ public class UserControler implements Serializable {
         return userDao.list();
     }
     
-    public String edit(String username) {
-    	System.out.println("Editing user " + username);
+    public String edit() {
+    	System.out.println("Editing user " + user.getUsername());
+    	userDao.edit(user);
         return "HomePage";
     }
     

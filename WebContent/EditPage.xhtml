@@ -13,12 +13,11 @@
 	</h:head>
 	
 	<h:body>
-		<h1>Please complete these forms, #{userControler.user.username}.</h1>
+		<h1>Please complete this form.</h1>
 		<h:form>
-		
 			<fieldset>
 			<legend> New Infos </legend>
-				<h:outputLabel value = "New Username" /><br />
+				<h:outputLabel value = "Username" /><br />
 				<h:inputText id = "username" value = "#{userControler.user.username}" >
 					<f:validator validatorId="userValidator" />
 				</h:inputText>
@@ -36,8 +35,7 @@
 				</h:inputSecret>
 				<h:message for = "password" /><br />
 			</fieldset> <br />
-			
-			<h:commandButton value = "Submit" action = "#{userController.edit(userControler.user.username)}" />
+			<h:commandButton value = "Submit" action = "#{userControler.edit()}" />		
 		</h:form>
 	</h:body>
 	

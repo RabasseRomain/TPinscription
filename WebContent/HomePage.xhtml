@@ -13,7 +13,7 @@
     </h:head>
     
     <h:body>
-    <h1><strong> Logged-in as #{userControler.user.username}. </strong></h1>
+    <h1><strong> Logged-in. </strong></h1>
     <h1> Here are all the peoples.</h1>
     <h:form>
     	<fieldset>
@@ -26,10 +26,11 @@
 					#{user.email}
 				</h:column>
 				<h:column>
-					<h:commandButton value = "EDIT" action = "#{userControler.edit(userControler.user.username)}" />
+					<h:inputHidden id = "usernameBIS" value = "#{user.username}"/>
+					<h:commandButton value = "EDIT" action = "EditPage" />
 				</h:column>
 				<h:column>
-					<h:commandButton value = "DELETE" action = "#{userControler.delete(userControler.user.username)}" />
+					<h:commandButton value = "DELETE" action = "#{userControler.delete(user.username)}" />
 				</h:column>
 			</h:dataTable>
 		</fieldset> <br />

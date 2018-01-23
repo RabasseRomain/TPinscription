@@ -23,8 +23,10 @@ public class UserDAO{
 		return em.createQuery("SELECT u FROM User u").getResultList();
 	}
     
-    public void edit(User user) {
-    	
+    public void edit(User newUser) {
+    	User oldUser = em.find(User.class, newUser.getUsername());
+    	oldUser.setEmail(newUser.getEmail());
+    	oldUser.setPassword(newUser.getPassword());  	
     }
     
     public void delete(String username) {

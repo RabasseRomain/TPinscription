@@ -30,21 +30,20 @@ public class UserControler implements Serializable {
         userDao.add(user);
     }
     
-    public List<User> list(String username) {
+    public List<User> list() {
     	System.out.println("Listing All Users");
         return userDao.list();
     }
     
-    public void edit(String username) {
-    	System.out.println("Editing user " + user.getUsername());
-        userDao.edit(user);
+    public String edit(String username) {
+    	System.out.println("Editing user " + username);
+        return "HomePage";
     }
     
     public String delete(String username) {
-    	// get user by username
-    	System.out.println("Deleting user " + user.getUsername());
-        userDao.delete(user);
-        return "DeletedPage";
+    	System.out.println("Deleting user " + username);
+        userDao.delete(username);
+        return "HomePage";
     }
 	
 	// ----- Other Functions --------------------
@@ -53,7 +52,7 @@ public class UserControler implements Serializable {
     	System.out.println("Looking for user " + user.getUsername());
         isInDatabase = false;
         for(User userCheck: userDao.list()) {
-        	if(userCheck.getUsername().equals(user.getUsername()) && userCheck.getEmail().equals(user.getEmail()) && userCheck.getPassword().equals(user.getPassword())) {
+        	if(userCheck.getUsername().equals(user.getUsername()) && userCheck.getPassword().equals(user.getPassword())) {
         		isInDatabase = true;
         	}
         }

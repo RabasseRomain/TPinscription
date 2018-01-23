@@ -13,31 +13,31 @@
 	</h:head>
 	
 	<h:body>
-		<h1>Please enter your new information #{userControler.user.username}.</h1>
+		<h1>Please complete these forms, #{userControler.user.username}.</h1>
 		<h:form>
+		
 			<fieldset>
 			<legend> New Infos </legend>
-			
-				<h:outputLabel value = "Username" /><br />
+				<h:outputLabel value = "New Username" /><br />
 				<h:inputText id = "username" value = "#{userControler.user.username}" >
 					<f:validator validatorId="userValidator" />
 				</h:inputText>
 				<h:message for = "username" /><br />
 				
-				<h:outputLabel value = "E-Mail" /><br />
+				<h:outputLabel value = "New E-Mail" /><br />
 				<h:inputText id = "email" value = "#{userControler.user.email}" >
 					<f:validator validatorId="userValidator" />
 				</h:inputText>
 				<h:message for = "email" /><br />
 				
-				<h:outputLabel value = "Password" /><br />
+				<h:outputLabel value = "New Password" /><br />
 				<h:inputSecret id = "password" value = "#{userControler.user.password}" >
 					<f:validator validatorId="userValidator" />
 				</h:inputSecret>
 				<h:message for = "password" /><br />
-				
 			</fieldset> <br />
-			<h:commandButton value = "Submit" action = "#{userController.edit()}" />
+			
+			<h:commandButton value = "Submit" action = "#{userController.edit(userControler.user.username)}" />
 		</h:form>
 	</h:body>
 	

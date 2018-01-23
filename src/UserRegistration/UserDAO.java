@@ -20,16 +20,15 @@ public class UserDAO{
     }
     
     public List<User> list() {
-		List<User> listUsers = em.createQuery("SELECT u FROM User u").getResultList();
-        return listUsers;
+		return em.createQuery("SELECT u FROM User u").getResultList();
 	}
     
     public void edit(User user) {
     	
     }
     
-    public void delete(User user) {
-    	//em.merge(user);
+    public void delete(String username) {
+    	User user = em.find(User.class, username);
         em.remove(user);
     }
 }

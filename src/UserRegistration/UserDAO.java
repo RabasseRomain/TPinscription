@@ -19,7 +19,8 @@ public class UserDAO{
         em.persist(user);
     }
     
-    public List<User> list() {
+    @SuppressWarnings("unchecked")
+	public List<User> list() {
 		return em.createQuery("SELECT u FROM User u").getResultList();
 	}
     
